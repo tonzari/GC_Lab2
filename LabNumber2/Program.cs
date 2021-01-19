@@ -86,6 +86,7 @@ namespace LabNumber2
                 {
                     userWantsToContinue = false;
                     Console.WriteLine(Environment.NewLine);
+                    Console.WriteLine("Goodbye!");
                 }
                 else
                 {
