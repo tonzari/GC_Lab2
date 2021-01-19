@@ -17,8 +17,7 @@ namespace LabNumber2
             double userWidth;
             bool userWantsToContinue = false;
 
-
-            // Main Sequence 
+            // Main Sequence and Loop 
             PrintWelcomeMessage();
             do
             {
@@ -28,12 +27,10 @@ namespace LabNumber2
             }
             while (userWantsToContinue);
 
-
+            // Methods
             void PrintWelcomeMessage()
             {
-                Console.WriteLine("Welcome to the Grand Circus Room Detail Generator!");
-                
-                Console.WriteLine("\n"); // Comsemetic padding
+                Console.WriteLine("Welcome to the Grand Circus Room Detail Generator! \n");
             }
 
             void GetUserDimensions()
@@ -42,8 +39,6 @@ namespace LabNumber2
                 userLength = double.Parse(Console.ReadLine());
                 Console.Write("Enter Width: ");
                 userWidth = double.Parse(Console.ReadLine());
-                
-                Console.WriteLine("\n"); // Comsemetic padding
             }
 
             double CalculateArea(double length, double width)
@@ -64,8 +59,7 @@ namespace LabNumber2
 
             void CheckUserWantsToContinue()
             {
-
-                Console.Write("Continue? (y/n) ");
+                Console.Write("\nContinue? (y/n) ");
                 char userInput = Console.ReadKey().KeyChar;
 
                 if (userInput.Equals('y'))
@@ -82,7 +76,7 @@ namespace LabNumber2
                     CheckUserWantsToContinue();
                 }
 
-                Console.WriteLine("\n"); // Comsemetic padding
+                Console.WriteLine("\n"); // Comsmetic padding
             }
 
         }
