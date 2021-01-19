@@ -15,6 +15,7 @@ namespace LabNumber2
             // init
             double userLength;
             double userWidth;
+            double userHeight;
             bool userWantsToContinue = false;
 
             // Main Sequence and Loop 
@@ -22,7 +23,7 @@ namespace LabNumber2
             do
             {
                 GetUserDimensions();
-                PrintCalculations(CalculateArea(userLength, userWidth), CalculatePerimeter(userLength, userWidth));
+                PrintCalculations(CalculateArea(userLength, userWidth), CalculatePerimeter(userLength, userWidth), CalculateVolume(userLength, userWidth, userHeight));
                 CheckUserWantsToContinue();
             }
             while (userWantsToContinue);
@@ -39,6 +40,8 @@ namespace LabNumber2
                 userLength = double.Parse(Console.ReadLine());
                 Console.Write("Enter Width: ");
                 userWidth = double.Parse(Console.ReadLine());
+                Console.Write("Enter Height: ");
+                userHeight = double.Parse(Console.ReadLine());
             }
 
             double CalculateArea(double length, double width)
@@ -51,10 +54,17 @@ namespace LabNumber2
                 return length * 2 + width * 2;
             }
 
-            void PrintCalculations(double area, double perimeter)
+            double CalculateVolume(double length, double width, double height)
+            {
+                return length * width * height;
+            }
+
+            void PrintCalculations(double area, double perimeter, double volume)
             {
                 Console.WriteLine("Area: " + area);
-                Console.WriteLine("Perimeter: " + perimeter + Environment.NewLine);
+                Console.WriteLine("Perimeter: " + perimeter);
+                Console.WriteLine("Volume: " + volume);
+                Console.Write(Environment.NewLine);
             }
 
             void CheckUserWantsToContinue()
@@ -79,7 +89,6 @@ namespace LabNumber2
                     CheckUserWantsToContinue();
                 }
             }
-
         }
     }
 }
