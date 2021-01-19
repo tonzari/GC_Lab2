@@ -23,7 +23,10 @@ namespace LabNumber2
             do
             {
                 GetUserDimensions();
-                PrintCalculations(CalculateArea(userLength, userWidth), CalculatePerimeter(userLength, userWidth), CalculateVolume(userLength, userWidth, userHeight));
+                PrintCalculations(
+                    CalculateArea(userLength, userWidth), 
+                    CalculatePerimeter(userLength, userWidth), 
+                    CalculateVolume(userLength, userWidth, userHeight));
                 CheckUserWantsToContinue();
             }
             while (userWantsToContinue);
@@ -38,8 +41,10 @@ namespace LabNumber2
             {
                 Console.Write("Enter Length: ");
                 userLength = double.Parse(Console.ReadLine());
+
                 Console.Write("Enter Width: ");
                 userWidth = double.Parse(Console.ReadLine());
+
                 Console.Write("Enter Height: ");
                 userHeight = double.Parse(Console.ReadLine());
             }
