@@ -30,7 +30,7 @@ namespace LabNumber2
             // Methods
             void PrintWelcomeMessage()
             {
-                Console.WriteLine("Welcome to the Grand Circus Room Detail Generator! \n");
+                Console.WriteLine("Welcome to the Grand Circus Room Detail Generator!" + Environment.NewLine);
             }
 
             void GetUserDimensions()
@@ -54,29 +54,30 @@ namespace LabNumber2
             void PrintCalculations(double area, double perimeter)
             {
                 Console.WriteLine("Area: " + area);
-                Console.WriteLine("Perimeter: " + perimeter);
+                Console.WriteLine("Perimeter: " + perimeter + Environment.NewLine);
             }
 
             void CheckUserWantsToContinue()
             {
-                Console.Write("\nContinue? (y/n) ");
+                Console.WriteLine("Continue? (y/n) ");
                 char userInput = Console.ReadKey().KeyChar;
 
                 if (userInput.Equals('y'))
                 {
                     userWantsToContinue = true;
+                    Console.WriteLine(Environment.NewLine);
                 }
                 else if (userInput.Equals('n'))
                 {
                     userWantsToContinue = false;
+                    Console.WriteLine(Environment.NewLine);
                 }
                 else
                 {
-                    Console.WriteLine("Please enter: y or n");
+                    Console.WriteLine(Environment.NewLine);
+                    Console.WriteLine("Please enter: y or n ");
                     CheckUserWantsToContinue();
                 }
-
-                Console.WriteLine("\n"); // Comsmetic padding
             }
 
         }
