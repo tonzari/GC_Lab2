@@ -16,11 +16,11 @@ namespace LabNumber2
             double userLength;
             double userWidth;
             double userHeight;
-            bool userWantsToContinue = false;
+            bool userWantsToContinue = true;
 
             // Main Sequence and Loop 
             PrintWelcomeMessage();
-            do
+            while (userWantsToContinue)
             {
                 GetUserDimensions();
                 PrintCalculations(
@@ -29,9 +29,8 @@ namespace LabNumber2
                     CalculateVolume(userLength, userWidth, userHeight));
                 CheckUserWantsToContinue();
             }
-            while (userWantsToContinue);
 
-            // Methods
+            #region Methods
             void PrintWelcomeMessage()
             {
                 Console.WriteLine("Welcome to the Grand Circus Room Detail Generator!" + Environment.NewLine);
@@ -95,6 +94,7 @@ namespace LabNumber2
                     CheckUserWantsToContinue();
                 }
             }
+            #endregion
         }
     }
 }
